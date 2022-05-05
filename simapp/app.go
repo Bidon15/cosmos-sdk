@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
-	"os"
-	"path/filepath"
 
 	"github.com/gorilla/mux"
 	"github.com/rakyll/statik/fs"
@@ -176,14 +174,14 @@ type SimApp struct {
 	configurator module.Configurator
 }
 
-func init() {
-	userHomeDir, err := os.UserHomeDir()
-	if err != nil {
-		panic(err)
-	}
+// func init() {
+// 	userHomeDir, err := os.UserHomeDir()
+// 	if err != nil {
+// 		panic(err)
+// 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".simapp")
-}
+// 	DefaultNodeHome = filepath.Join(userHomeDir, ".simapp")
+// }
 
 // NewSimApp returns a reference to an initialized SimApp.
 func NewSimApp(
